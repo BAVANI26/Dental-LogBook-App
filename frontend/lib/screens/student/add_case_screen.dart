@@ -66,7 +66,16 @@ class _AddCaseScreenState extends State<AddCaseScreen> {
       ),
     );
 
-    Navigator.pop(context, newCase);
+    patientIdController.clear();
+    patientNameController.clear();
+    ageController.clear();
+    genderController.clear();
+    toothController.clear();
+    diagnosisController.clear();
+    notesController.clear();
+    setState(() {
+      selectedImage = null;
+    });
   }
 
   @override

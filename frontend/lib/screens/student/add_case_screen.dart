@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../models/case_model.dart';
@@ -33,7 +35,7 @@ class _AddCaseScreenState extends State<AddCaseScreen> {
     }
   }
 
-  void saveCase() {
+  void saveCase() async {
     if (patientIdController.text.isEmpty ||
         patientNameController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -54,6 +56,24 @@ class _AddCaseScreenState extends State<AddCaseScreen> {
       notes: notesController.text,
       imagePath: selectedImage?.path ?? '',
     );
+
+    try {
+      final user = FirebaseAuth.instance.currentUser;
+      await FirebaseFirestore.instance.collection('cases').add({
+        'patientId': newCase.patientId,
+        'patientName': newCase.patientName,
+        'age': newCase.age,
+        'gender': newCase.gender,
+        'toothNumber': newCase.toothNumber,
+        'diagnosis': newCase.diagnosis,
+        'notes': newCase.notes,
+        'imagePath': newCase.imagePath,
+        'userId': user?.uid,
+        'createdAt': DateTime.now().toString(),
+      });
+    } catch (e) {
+      print('Firestore error: $e');
+    }
 
     if (widget.onSave != null) {
       widget.onSave!(newCase);

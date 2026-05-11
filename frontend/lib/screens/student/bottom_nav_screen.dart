@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../../models/case_model.dart';
+import '../auth/login_screen.dart';
 import 'dashboard_screen.dart';
 import 'add_case_screen.dart';
 import 'my_cases_screen.dart';
@@ -25,7 +27,12 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   Widget build(BuildContext context) {
     final screens = [
       DashboardScreen(cases: cases, onAddCase: addCase),
-      AddCaseScreen(onSave: addCase),
+      AddCaseScreen(onSave: (newCase) {
+        addCase(newCase);
+        setState(() {
+          currentIndex = 0;
+        });
+      }),
       MyCasesScreen(cases: cases),
       const ProfileScreen(),
     ];
@@ -82,8 +89,8 @@ class ProfileScreen extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-         padding: const EdgeInsets.all(20),
-         child: Column(
+        padding: const EdgeInsets.all(20),
+        child: Column(
           children: [
             const SizedBox(height: 30),
             const CircleAvatar(
@@ -122,12 +129,20 @@ class ProfileScreen extends StatelessWidget {
               leading: const Icon(Icons.badge, color: Colors.blue),
               title: const Text('Roll No: 2021BDS001'),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 20),
             SizedBox(
               width: double.infinity,
               height: 50,
               child: ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: () async {
+                  await FirebaseAuth.instance.signOut();
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(),
+                    ),
+                  );
+                },
                 icon: const Icon(Icons.logout),
                 label: const Text('Logout'),
                 style: ElevatedButton.styleFrom(

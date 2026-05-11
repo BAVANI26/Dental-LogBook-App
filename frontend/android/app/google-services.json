@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "94668415174",
+    "project_id": "dent-log",
+    "storage_bucket": "dent-log.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94668415174:android:e1fc296fc293a966b5b7c7",
+        "android_client_info": {
+          "package_name": "com.example.frontend"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAF_yb6Dlgb9zzp89tRiCJ7xj-7w9yNHPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

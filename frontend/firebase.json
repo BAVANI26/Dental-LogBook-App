@@ -1,1 +1,39 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"dent-log","appId":"1:94668415174:android:e1fc296fc293a966b5b7c7","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"dent-log","configurations":{"android":"1:94668415174:android:e1fc296fc293a966b5b7c7","ios":"1:94668415174:ios:d5d740eb65b2ed36b5b7c7","macos":"1:94668415174:ios:d5d740eb65b2ed36b5b7c7","web":"1:94668415174:web:e3ae757009ab6a1bb5b7c7","windows":"1:94668415174:web:3f566f2b943d12bbb5b7c7"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "dent-log",
+          "appId": "1:94668415174:android:e1fc296fc293a966b5b7c7",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "dent-log",
+          "configurations": {
+            "android": "1:94668415174:android:e1fc296fc293a966b5b7c7",
+            "ios": "1:94668415174:ios:d5d740eb65b2ed36b5b7c7",
+            "macos": "1:94668415174:ios:d5d740eb65b2ed36b5b7c7",
+            "web": "1:94668415174:web:e3ae757009ab6a1bb5b7c7",
+            "windows": "1:94668415174:web:3f566f2b943d12bbb5b7c7"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

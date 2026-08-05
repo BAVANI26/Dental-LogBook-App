@@ -1,0 +1,24 @@
+{
+  "name": "dental-logbook-load-tests",
+  "version": "1.0.0",
+  "description": "Baseline Load Testing and Performance Benchmark Report Generator for Dental LogBook Application",
+  "main": "run-baseline-load-test.js",
+  "scripts": {
+    "test:load": "node run-baseline-load-test.js",
+    "generate-excel": "node generate-excel-report.js"
+  },
+  "keywords": [
+    "load-testing",
+    "baseline-testing",
+    "performance",
+    "benchmarking",
+    "rps",
+    "response-time",
+    "exceljs"
+  ],
+  "author": "Performance & QA Engineering Team",
+  "license": "ISC",
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  }
+}

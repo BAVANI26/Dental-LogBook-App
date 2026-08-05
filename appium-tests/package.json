@@ -1,0 +1,30 @@
+{
+  "name": "dental-logbook-appium-tests",
+  "version": "1.0.0",
+  "description": "Appium E2E Mobile Test Suite and 300 Test Cases Excel Report Generator for Dental LogBook App",
+  "main": "tests/app-e2e-tests.js",
+  "scripts": {
+    "test": "mocha tests/app-e2e-tests.js --timeout 120000",
+    "generate-excel": "node generate-excel.js"
+  },
+  "keywords": [
+    "appium",
+    "webdriverio",
+    "mobile-testing",
+    "flutter-mobile",
+    "android",
+    "ios",
+    "dental-logbook",
+    "e2e-testing"
+  ],
+  "author": "Mobile QA Automation Team",
+  "license": "ISC",
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "webdriverio": "^8.32.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "mocha": "^10.3.0"
+  }
+}

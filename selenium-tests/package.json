@@ -1,0 +1,28 @@
+{
+  "name": "dental-logbook-selenium-tests",
+  "version": "1.0.0",
+  "description": "Selenium Web Frontend E2E Test Suite and Test Report Generator for Dental LogBook App",
+  "main": "tests/login-tests.js",
+  "scripts": {
+    "test": "mocha tests/login-tests.js --timeout 60000",
+    "generate-excel": "node generate-excel.js"
+  },
+  "keywords": [
+    "selenium",
+    "webdriver",
+    "e2e-testing",
+    "flutter-web",
+    "dental-logbook",
+    "qa"
+  ],
+  "author": "QA Automation Team",
+  "license": "ISC",
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "selenium-webdriver": "^4.18.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "mocha": "^10.3.0"
+  }
+}
